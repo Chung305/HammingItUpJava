@@ -3,19 +3,20 @@ package zipcode;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import zipcode.Hamming;
+
 
 import static org.junit.Assert.assertEquals;
 
 
-public class HammingTest {
+public class HammingTest{
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
     @Test
-    public void testNoDistanceBetweenEmptyStrands() {
-        assertEquals(0, new Hamming("", "").getHammingDistance());
+    public void testNoDistanceBetweenEmptyStrands(){
+
+            assertEquals(0, new Hamming("", "").getHammingDistance());
     }
 
     @Test
@@ -87,7 +88,7 @@ public class HammingTest {
     }
 
     @Test
-    public void testValidatesSecondStrandNotLonger() {
+    public void testValidatesSecondStrandNotLonger()  {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("leftStrand and rightStrand must be of equal length.");
 
